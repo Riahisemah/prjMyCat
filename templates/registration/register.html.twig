@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+{#
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.username) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+    #}
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="{{ asset('signup/app.css')}}">
+<body>
+    <div id="container">
+    <div id="form-wrap">
+        <h1>Sing Up</h1>
+        <p>Get all benefits <span class="free">for free!</span></p>
+        {{ form_start(registrationForm) }}
+        <div class="form-group">
+            <label for="{{ registrationForm.username.vars.id }}">Username<span class="asterisk">&#42;</span></label>
+            {{ form_widget(registrationForm.username, {'attr': {'placeholder': 'username'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="{{ registrationForm.adress.vars.id }}">Address<span class="asterisk">&#42;</span></label>
+            {{ form_widget(registrationForm.adress, {'attr': {'placeholder': 'address'}}) }}
+        </div>
+        <div class="form-group">
+            <label for="{{ registrationForm.numero.vars.id }}">Number phone <span class="asterisk">&#42;</span></label>
+            {{ form_widget(registrationForm.numero) }}
+        </div>
+        <div class="form-group">
+            <label for="{{ registrationForm.plainPassword.vars.id }}">Password<span class="asterisk">&#42;</span></label>
+            {{ form_widget(registrationForm.plainPassword) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+        <button type="submit">Sign Up</button>
+        <p class="notice">By clicking the Sign Up button, you agree to our
+            <a href="#">Terms & Conditions</a> and
+            <a href="#">Privacy Policy</a>
+        </p>
+        {{ form_end(registrationForm) }}
+    </div>
+    <footer>
+        <p>Already have an account? <a href="{{ path('app_login') }}">Login Here</a></p>
+    </footer>
+</div>
+
+{% endblock %}

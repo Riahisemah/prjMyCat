@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cat{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div style="justify-content: center;" class="">
+        
+    <h1>Create new Cat</h1>
+    
+    {{ include('cat/_form.html.twig') }}
+
+    <a href="{{ path('app_store') }}">back to list</a>
+
+</div>
+</div>
+{% endblock %}
